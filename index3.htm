@@ -1,0 +1,1532 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Highcharts Example</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var chart;
+            $(document).ready(function () {
+                chart = new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'container',
+                        type: 'scatter',
+                        zoomType: 'xy'
+                    },
+                    title: {
+                        text: 'Concentrated poverty'
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        title: {
+                            enabled: true,
+                            text: '% YMBOC in 20% poor neighborhoods'
+                        },
+                        startOnTick: true,
+                        endOnTick: true,
+                        showLastLabel: true,
+                        min: 0,
+                        max: 100
+                    },
+                    yAxis: {
+                        title: {
+                            text: '% White young men in 20% poor neighborhoods'
+                        },
+                        min: 0,
+                        max: 100
+                    },
+                    tooltip: {
+                        formatter: function () {
+                            return this.series.name + '<br>Color: ' +
+                                this.x + '%, White:' + this.y + '';
+                        }
+                    },
+                    exporting: {
+                        enabled: false
+                    },
+                    legend: {
+                        enabled: false,
+                        layout: 'vertical',
+                        align: 'left',
+                        verticalAlign: 'top',
+                        x: 100,
+                        y: 70,
+                        floating: true,
+                        backgroundColor: '#FFFFFF',
+                        borderWidth: 1
+                    },
+                    plotOptions: {
+                        scatter: {
+                            marker: {
+                                symbol: 'circle',
+                                radius: 5,
+                                states: {
+                                    hover: {
+                                        enabled: true,
+                                        lineColor: 'rgb(100,100,100)'
+                                    }
+                                }
+                            },
+                            states: {
+                                hover: {
+                                    marker: {
+                                        enabled: false
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    series: [
+
+                        {
+                            name: 'Albuquerque',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[45.5, 23.8]]
+                        },
+                        {
+                            name: 'Anaheim',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[40.5, 15.1]]
+                        },
+                        {
+                            name: 'Anchorage',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[10.1, 1.8]]
+                        },
+                        {
+                            name: 'Arlington',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[47.3, 19.8]]
+                        },
+                        {
+                            name: 'Atlanta',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[78.2, 41]]
+                        },
+                        {
+                            name: 'Augusta',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[61.8, 49.8]]
+                        },
+                        {
+                            name: 'Aurora',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[48.2, 15.3]]
+                        },
+                        {
+                            name: 'Aurora',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[41.3, 11.3]]
+                        },
+                        {
+                            name: 'Austin',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[61.5, 31.7]]
+                        },
+                        {
+                            name: 'Bakersfield',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[54.2, 20]]
+                        },
+                        {
+                            name: 'Baltimore',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[63.5, 43.2]]
+                        },
+                        {
+                            name: 'Baton Rouge',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[73.9, 58.2]]
+                        },
+                        {
+                            name: 'Birmingham',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[78.7, 45.6]]
+                        },
+                        {
+                            name: 'Boston',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[65.1, 61.1]]
+                        },
+                        {
+                            name: 'Bridgeport',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[69.6, 34.3]]
+                        },
+                        {
+                            name: 'Brownsville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[95.1, 89.7]]
+                        },
+                        {
+                            name: 'Buffalo',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[90.1, 61.9]]
+                        },
+                        {
+                            name: 'Chandler',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[24.8, 4.3]]
+                        },
+                        {
+                            name: 'Charlotte',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[49.4, 16.7]]
+                        },
+                        {
+                            name: 'Chicago',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[65.9, 23.6]]
+                        },
+                        {
+                            name: 'Chula Vista',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[16.5, 7.5]]
+                        },
+                        {
+                            name: 'Cincinnati',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[73.7, 56.6]]
+                        },
+                        {
+                            name: 'Cleveland',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[89.2, 66.5]]
+                        },
+                        {
+                            name: 'Colorado Springs',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[42.5, 18.6]]
+                        },
+                        {
+                            name: 'Columbus',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[63.3, 42]]
+                        },
+                        {
+                            name: 'Columbus',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[48.9, 12.6]]
+                        },
+                        {
+                            name: 'Corona',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[17.6, 3.5]]
+                        },
+                        {
+                            name: 'Corpus Christi',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[51.9, 24.1]]
+                        },
+                        {
+                            name: 'Dallas',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[77.3, 27.4]]
+                        },
+                        {
+                            name: 'Denver',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[62.6, 30.1]]
+                        },
+                        {
+                            name: 'Detroit',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[90.8, 95]]
+                        },
+                        {
+                            name: 'Durham',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[49.2, 25.3]]
+                        },
+                        {
+                            name: 'East Los Angeles',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[78.5, 100]]
+                        },
+                        {
+                            name: 'El Paso',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[49.1, 27.4]]
+                        },
+                        {
+                            name: 'Elk Grove',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[5.2, 5]]
+                        },
+                        {
+                            name: 'Escondido',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[39.9, 27.8]]
+                        },
+                        {
+                            name: 'Fayetteville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[27.3, 14.3]]
+                        },
+                        {
+                            name: 'Fontana',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[29.7, 27.1]]
+                        },
+                        {
+                            name: 'Fort Worth',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[55.2, 16.9]]
+                        },
+                        {
+                            name: 'Fremont',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Fresno',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[74.5, 36.4]]
+                        },
+                        {
+                            name: 'Garden Grove',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[25.6, 14.1]]
+                        },
+                        {
+                            name: 'Garland',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[37.7, 13.4]]
+                        },
+                        {
+                            name: 'Glendale',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[53.1, 14.5]]
+                        },
+                        {
+                            name: 'Grand Prairie',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[36.1, 25.7]]
+                        },
+                        {
+                            name: 'Grand Rapids',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[86.8, 56.2]]
+                        },
+                        {
+                            name: 'Greensboro',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[63.5, 30]]
+                        },
+                        {
+                            name: 'Hayward',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[22.3, 16.8]]
+                        },
+                        {
+                            name: 'Hialeah',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[58.1, 52.7]]
+                        },
+                        {
+                            name: 'Honolulu',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[13.9, 11.9]]
+                        },
+                        {
+                            name: 'Houston',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[67.2, 19.9]]
+                        },
+                        {
+                            name: 'Indianapolis',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[59.7, 34.4]]
+                        },
+                        {
+                            name: 'Irvine',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[24.1, 15.3]]
+                        },
+                        {
+                            name: 'Irving',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[34.7, 19.7]]
+                        },
+                        {
+                            name: 'Jackson',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[75.6, 40.4]]
+                        },
+                        {
+                            name: 'Jacksonville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[41.5, 19.6]]
+                        },
+                        {
+                            name: 'Jersey City',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[43, 24.9]]
+                        },
+                        {
+                            name: 'Kansas City',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[60.4, 17.3]]
+                        },
+                        {
+                            name: 'Kansas City',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[81.3, 45.9]]
+                        },
+                        {
+                            name: 'Killeen',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[27.4, 28.2]]
+                        },
+                        {
+                            name: 'Lancaster',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[57, 43.8]]
+                        },
+                        {
+                            name: 'Laredo',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[66.6, 25.7]]
+                        },
+                        {
+                            name: 'Las Vegas',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[49.5, 16.9]]
+                        },
+                        {
+                            name: 'Little Rock',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[47, 12.1]]
+                        },
+                        {
+                            name: 'Long Beach',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[66, 22.5]]
+                        },
+                        {
+                            name: 'Los Angeles',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[62.8, 20.8]]
+                        },
+                        {
+                            name: 'Louisville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[60.3, 20.7]]
+                        },
+                        {
+                            name: 'Lubbock',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[64.3, 49.1]]
+                        },
+                        {
+                            name: 'McAllen',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[59.2, 30.1]]
+                        },
+                        {
+                            name: 'Memphis',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[71.2, 25.2]]
+                        },
+                        {
+                            name: 'Mesa',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[44.2, 22.4]]
+                        },
+                        {
+                            name: 'Miami',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[79.5, 30.1]]
+                        },
+                        {
+                            name: 'Milwaukee',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[81.6, 53.6]]
+                        },
+                        {
+                            name: 'Minneapolis',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[72.5, 47.6]]
+                        },
+                        {
+                            name: 'Mobile',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[66.9, 29.3]]
+                        },
+                        {
+                            name: 'Modesto',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[57.5, 35.1]]
+                        },
+                        {
+                            name: 'Montgomery',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[68.8, 18.4]]
+                        },
+                        {
+                            name: 'Moreno Valley',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[40.2, 24.5]]
+                        },
+                        {
+                            name: 'Nashville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[58.5, 33.2]]
+                        },
+                        {
+                            name: 'New Orleans',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[82.3, 44.9]]
+                        },
+                        {
+                            name: 'New York',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[58.6, 28.9]]
+                        },
+                        {
+                            name: 'Newark',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[78.7, 58]]
+                        },
+                        {
+                            name: 'Newport News',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[33.1, 8.5]]
+                        },
+                        {
+                            name: 'Norfolk',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[31.6, 17.7]]
+                        },
+                        {
+                            name: 'North Las Vegas',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[32.2, 4.4]]
+                        },
+                        {
+                            name: 'Oakland',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[71, 24.4]]
+                        },
+                        {
+                            name: 'Oceanside',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[10.8, 5.8]]
+                        },
+                        {
+                            name: 'Oklahoma City',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[56.3, 24.6]]
+                        },
+                        {
+                            name: 'Omaha',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[59.3, 20.1]]
+                        },
+                        {
+                            name: 'Ontario',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[33.4, 9.3]]
+                        },
+                        {
+                            name: 'Orlando',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[46.6, 17.5]]
+                        },
+                        {
+                            name: 'Oxnard',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[23.8, 10.2]]
+                        },
+                        {
+                            name: 'Palmdale',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[43, 17.2]]
+                        },
+                        {
+                            name: 'Paradise',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[38, 14.1]]
+                        },
+                        {
+                            name: 'Pasadena',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[57.3, 27.2]]
+                        },
+                        {
+                            name: 'Paterson',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[78.4, 73.9]]
+                        },
+                        {
+                            name: 'Philadelphia',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[76.8, 43]]
+                        },
+                        {
+                            name: 'Phoenix',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[67.7, 22.4]]
+                        },
+                        {
+                            name: 'Pittsburgh',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[68.6, 45]]
+                        },
+                        {
+                            name: 'Plano',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[14.9, 3]]
+                        },
+                        {
+                            name: 'Pomona',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[49, 33.4]]
+                        },
+                        {
+                            name: 'Portland',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[46.5, 27.6]]
+                        },
+                        {
+                            name: 'Providence',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[82.6, 64]]
+                        },
+                        {
+                            name: 'Raleigh',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[45.5, 37.9]]
+                        },
+                        {
+                            name: 'Rancho Cucamonga',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Reno',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[55.3, 26.9]]
+                        },
+                        {
+                            name: 'Richmond',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[74.3, 48.5]]
+                        },
+                        {
+                            name: 'Riverside',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[44.7, 29.4]]
+                        },
+                        {
+                            name: 'Rochester',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[75.9, 40.4]]
+                        },
+                        {
+                            name: 'Sacramento',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[57.5, 37.4]]
+                        },
+                        {
+                            name: 'Salinas',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[44.7, 21.5]]
+                        },
+                        {
+                            name: 'San Antonio',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[56.9, 24.7]]
+                        },
+                        {
+                            name: 'San Bernardino',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[78.8, 44.4]]
+                        },
+                        {
+                            name: 'San Diego',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[42.1, 17.9]]
+                        },
+                        {
+                            name: 'San Francisco',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[19.3, 10.8]]
+                        },
+                        {
+                            name: 'San Jose',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[20.3, 8.7]]
+                        },
+                        {
+                            name: 'Santa Ana',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[53.8, 23.3]]
+                        },
+                        {
+                            name: 'Seattle',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[36.4, 23.6]]
+                        },
+                        {
+                            name: 'Shreveport',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[61, 12.1]]
+                        },
+                        {
+                            name: 'Springfield',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[77.5, 48.9]]
+                        },
+                        {
+                            name: 'St. Louis',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[86.5, 43.5]]
+                        },
+                        {
+                            name: 'St. Paul',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[71.5, 37.8]]
+                        },
+                        {
+                            name: 'Stockton',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[57.7, 22.3]]
+                        },
+                        {
+                            name: 'Sunrise Manor',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[63.9, 51.2]]
+                        },
+                        {
+                            name: 'Tallahassee',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[77.2, 70]]
+                        },
+                        {
+                            name: 'Tampa',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[63.9, 27.5]]
+                        },
+                        {
+                            name: 'Toledo',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[76.5, 51.6]]
+                        },
+                        {
+                            name: 'Tucson',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[74.8, 51.3]]
+                        },
+                        {
+                            name: 'Tulsa',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[64.4, 34.1]]
+                        },
+                        {
+                            name: 'Virginia Beach',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[7.1, 3.5]]
+                        },
+                        {
+                            name: 'Washington',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[58.1, 27.3]]
+                        },
+                        {
+                            name: 'Wichita',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[50.4, 21]]
+                        },
+                        {
+                            name: 'Winston-Salem',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[69.9, 35.9]]
+                        },
+                        {
+                            name: 'Yonkers',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[55.6, 7.9]]
+                        },
+                        {
+                            name: 'Line where % YMBOC and % white are equal',
+                            data: [[0, 0], [100, 100]],
+                            type: 'line'
+                        }
+            ]
+                }); //end chart1
+
+
+
+                chart40 = new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'container40',
+                        type: 'scatter',
+                        zoomType: 'xy'
+                    },
+                    title: {
+                        text: 'Very concentrated poverty'
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        title: {
+                            enabled: true,
+                            text: '% YMBOC in 40% poor neighborhoods'
+                        },
+                        startOnTick: true,
+                        endOnTick: true,
+                        showLastLabel: true,
+                        min: 0,
+                        max: 100
+                    },
+                    yAxis: {
+                        title: {
+                            text: '% White young men in 40% poor neighborhoods'
+                        },
+                        min: 0,
+                        max: 100
+                    },
+                    tooltip: {
+                        formatter: function () {
+                            return this.series.name + '<br>Color: ' +
+                                this.x + '%, White:' + this.y + '';
+                        }
+                    },
+                    exporting: {
+                        enabled: false
+                    },
+                    legend: {
+                        enabled: false,
+                        layout: 'vertical',
+                        align: 'left',
+                        verticalAlign: 'top',
+                        x: 100,
+                        y: 70,
+                        floating: true,
+                        backgroundColor: '#FFFFFF',
+                        borderWidth: 1
+                    },
+                    plotOptions: {
+                        scatter: {
+                            marker: {
+                                symbol: 'circle',
+                                radius: 5,
+                                states: {
+                                    hover: {
+                                        enabled: true,
+                                        lineColor: 'rgb(100,100,100)'
+                                    }
+                                }
+                            },
+                            states: {
+                                hover: {
+                                    marker: {
+                                        enabled: false
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'y=x',
+                            data: [[0, 0], [100, 100]],
+                            type: 'line'
+                        },
+                        {
+                            name: 'Anaheim',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Anchorage',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Arlington',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[6.9, 3.6]]
+                        },
+                        {
+                            name: 'Atlanta',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[41, 23.5]]
+                        },
+                        {
+                            name: 'Augusta',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[15.5, 3]]
+                        },
+                        {
+                            name: 'Aurora',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[4.2, 0.4]]
+                        },
+                        {
+                            name: 'Aurora',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Austin',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[18.5, 14.4]]
+                        },
+                        {
+                            name: 'Bakersfield',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[18.1, 3]]
+                        },
+                        {
+                            name: 'Baltimore',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[14.6, 7.7]]
+                        },
+                        {
+                            name: 'Baton Rouge',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[31.8, 48.7]]
+                        },
+                        {
+                            name: 'Birmingham',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[28.7, 22.4]]
+                        },
+                        {
+                            name: 'Boston',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[14.3, 22.5]]
+                        },
+                        {
+                            name: 'Bridgeport',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[12.6, 2.4]]
+                        },
+                        {
+                            name: 'Brownsville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[32.3, 19.6]]
+                        },
+                        {
+                            name: 'Buffalo',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[34.5, 10.9]]
+                        },
+                        {
+                            name: 'Chandler',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Charlotte',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[11.3, 5.2]]
+                        },
+                        {
+                            name: 'Chicago',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[16.2, 1.9]]
+                        },
+                        {
+                            name: 'Chula Vista',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Cincinnati',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[35.6, 31.4]]
+                        },
+                        {
+                            name: 'Cleveland',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[43.4, 25.6]]
+                        },
+                        {
+                            name: 'Colorado Springs',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[2.5, 1.2]]
+                        },
+                        {
+                            name: 'Columbus',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[21.6, 22.9]]
+                        },
+                        {
+                            name: 'Columbus',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[12.6, 2.1]]
+                        },
+                        {
+                            name: 'Corona',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Corpus Christi',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[4.4, 0.7]]
+                        },
+                        {
+                            name: 'Dallas',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[14.4, 4.4]]
+                        },
+                        {
+                            name: 'Denver',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[7, 1.3]]
+                        },
+                        {
+                            name: 'Detroit',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[42.7, 59.4]]
+                        },
+                        {
+                            name: 'Durham',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[16.9, 8.2]]
+                        },
+                        {
+                            name: 'East Los Angeles',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'El Paso',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[10, 1.6]]
+                        },
+                        {
+                            name: 'Elk Grove',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Escondido',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[9.6, 3.2]]
+                        },
+                        {
+                            name: 'Fayetteville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[2.6, 0.4]]
+                        },
+                        {
+                            name: 'Fontana',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[3.2, 0.9]]
+                        },
+                        {
+                            name: 'Fort Worth',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[14.4, 2.2]]
+                        },
+                        {
+                            name: 'Fremont',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Fresno',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[37.3, 11.4]]
+                        },
+                        {
+                            name: 'Garden Grove',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Garland',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[3.6, 0.2]]
+                        },
+                        {
+                            name: 'Glendale',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[16.7, 2.6]]
+                        },
+                        {
+                            name: 'Grand Prairie',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Grand Rapids',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[33.7, 11.7]]
+                        },
+                        {
+                            name: 'Greensboro',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[6.9, 6.1]]
+                        },
+                        {
+                            name: 'Hayward',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Hialeah',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[7.8, 2.6]]
+                        },
+                        {
+                            name: 'Honolulu',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[4.7, 5.1]]
+                        },
+                        {
+                            name: 'Houston',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[15.1, 1.9]]
+                        },
+                        {
+                            name: 'Indianapolis',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[12.4, 5.7]]
+                        },
+                        {
+                            name: 'Irvine',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[18.9, 12.1]]
+                        },
+                        {
+                            name: 'Irving',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[6.3, 5.2]]
+                        },
+                        {
+                            name: 'Jackson',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[25.8, 9.8]]
+                        },
+                        {
+                            name: 'Jacksonville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[7.3, 1.3]]
+                        },
+                        {
+                            name: 'Jersey City',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[3.5, 0.1]]
+                        },
+                        {
+                            name: 'Kansas City',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[22, 4.8]]
+                        },
+                        {
+                            name: 'Kansas City',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[13.3, 4.9]]
+                        },
+                        {
+                            name: 'Killeen',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Lancaster',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Laredo',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[32.2, 7.1]]
+                        },
+                        {
+                            name: 'Las Vegas',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[8.1, 1.3]]
+                        },
+                        {
+                            name: 'Little Rock',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[11, 2.2]]
+                        },
+                        {
+                            name: 'Long Beach',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[10, 0.9]]
+                        },
+                        {
+                            name: 'Los Angeles',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[15.5, 6.1]]
+                        },
+                        {
+                            name: 'Louisville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[26.5, 6.2]]
+                        },
+                        {
+                            name: 'Lubbock',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[14, 13.6]]
+                        },
+                        {
+                            name: 'McAllen',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[15, 2]]
+                        },
+                        {
+                            name: 'Memphis',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[29.3, 7.5]]
+                        },
+                        {
+                            name: 'Mesa',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[2.7, 0.7]]
+                        },
+                        {
+                            name: 'Miami',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[30.3, 9.4]]
+                        },
+                        {
+                            name: 'Milwaukee',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[37.4, 16.8]]
+                        },
+                        {
+                            name: 'Minneapolis',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[27.1, 26.6]]
+                        },
+                        {
+                            name: 'Mobile',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[24.4, 2.4]]
+                        },
+                        {
+                            name: 'Modesto',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[17.8, 4.5]]
+                        },
+                        {
+                            name: 'Montgomery',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[21.6, 5.9]]
+                        },
+                        {
+                            name: 'Moreno Valley',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[4, 1.8]]
+                        },
+                        {
+                            name: 'Nashville',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[13.1, 7]]
+                        },
+                        {
+                            name: 'New Orleans',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[27.6, 11.8]]
+                        },
+                        {
+                            name: 'New York',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[13.1, 8.5]]
+                        },
+                        {
+                            name: 'Newark',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[17.8, 7.4]]
+                        },
+                        {
+                            name: 'Newport News',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[8.6, 1.7]]
+                        },
+                        {
+                            name: 'Norfolk',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[10, 9]]
+                        },
+                        {
+                            name: 'North Las Vegas',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[17.9, 2.7]]
+                        },
+                        {
+                            name: 'Oakland',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[6.2, 1.4]]
+                        },
+                        {
+                            name: 'Oceanside',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Oklahoma City',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[12, 1.8]]
+                        },
+                        {
+                            name: 'Omaha',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[12.3, 3.5]]
+                        },
+                        {
+                            name: 'Ontario',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[4.5, 0.6]]
+                        },
+                        {
+                            name: 'Orlando',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0.2, 0.1]]
+                        },
+                        {
+                            name: 'Oxnard',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Palmdale',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[7.2, 1.8]]
+                        },
+                        {
+                            name: 'Paradise',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[4.5, 0.6]]
+                        },
+                        {
+                            name: 'Pasadena',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[11.1, 3.5]]
+                        },
+                        {
+                            name: 'Paterson',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[15.4, 6.3]]
+                        },
+                        {
+                            name: 'Philadelphia',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[30.7, 18]]
+                        },
+                        {
+                            name: 'Phoenix',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[23.3, 4.1]]
+                        },
+                        {
+                            name: 'Pittsburgh',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[20.8, 17.7]]
+                        },
+                        {
+                            name: 'Plano',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Pomona',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[14.4, 17.6]]
+                        },
+                        {
+                            name: 'Portland',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0.2, 0.3]]
+                        },
+                        {
+                            name: 'Providence',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[20.1, 21.5]]
+                        },
+                        {
+                            name: 'Raleigh',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[11.8, 12.1]]
+                        },
+                        {
+                            name: 'Rancho Cucamonga',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0, 0]]
+                        },
+                        {
+                            name: 'Reno',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[23.6, 11.2]]
+                        },
+                        {
+                            name: 'Richmond',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[39.1, 23.9]]
+                        },
+                        {
+                            name: 'Riverside',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[6.2, 3.7]]
+                        },
+                        {
+                            name: 'Rochester',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[43.7, 13.4]]
+                        },
+                        {
+                            name: 'Sacramento',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[4.4, 3.3]]
+                        },
+                        {
+                            name: 'Salinas',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[15.6, 2.1]]
+                        },
+                        {
+                            name: 'San Antonio',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[11.9, 3.5]]
+                        },
+                        {
+                            name: 'San Bernardino',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[34.2, 17.8]]
+                        },
+                        {
+                            name: 'San Diego',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[9.4, 4.5]]
+                        },
+                        {
+                            name: 'San Francisco',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[3.2, 2.7]]
+                        },
+                        {
+                            name: 'San Jose',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[0.8, 1.7]]
+                        },
+                        {
+                            name: 'Santa Ana',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[8.6, 0.9]]
+                        },
+                        {
+                            name: 'Seattle',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[12.2, 14.4]]
+                        },
+                        {
+                            name: 'Shreveport',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[14.2, 2.2]]
+                        },
+                        {
+                            name: 'Springfield',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[36.8, 11.7]]
+                        },
+                        {
+                            name: 'St. Louis',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[28.2, 11.9]]
+                        },
+                        {
+                            name: 'St. Paul',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[19.2, 5.6]]
+                        },
+                        {
+                            name: 'Stockton',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[15.7, 3.7]]
+                        },
+                        {
+                            name: 'Sunrise Manor',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[6.1, 1]]
+                        },
+                        {
+                            name: 'Tallahassee',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[54.1, 54]]
+                        },
+                        {
+                            name: 'Tampa',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[20.2, 2.4]]
+                        },
+                        {
+                            name: 'Toledo',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[36.3, 12.5]]
+                        },
+                        {
+                            name: 'Tucson',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[14.8, 20.9]]
+                        },
+                        {
+                            name: 'Tulsa',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[9, 5.3]]
+                        },
+                        {
+                            name: 'Virginia Beach',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[1.7, 0.2]]
+                        },
+                        {
+                            name: 'Washington',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[20.1, 13.6]]
+                        },
+                        {
+                            name: 'Wichita',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[15.1, 4]]
+                        },
+                        {
+                            name: 'Winston-Salem',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[21.1, 5.3]]
+                        },
+                        {
+                            name: 'Yonkers',
+                            color: 'rgba(223, 83, 83, .5)',
+                            data: [[7.8, 1.4]]
+                        },
+                        {
+                            name: 'Line where % YMBOC and % white are equal',
+                            data: [[0, 0], [100, 100]],
+                            type: 'line'
+                        }
+            ]
+                }); //end chart 40%
+
+
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <script src="js/highcharts.js"></script>
+    <script src="js/modules/exporting.js"></script>
+
+    <div id="container" style="width: 400px; height: 400px; margin: 0 auto"></div>
+    <div id="container40" style="width: 400px; height: 400px; margin: 0 auto"></div>
+
+</body>
+
+</html>
